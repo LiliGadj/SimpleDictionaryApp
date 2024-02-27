@@ -1,0 +1,32 @@
+def main():
+    dictionary = {}
+
+    while True:
+        print("\nМеню словаря:")
+        print("1. Добавить слово и его определение")
+        print("2. Найти определение слова")
+        print("3. Выход")
+
+        choice = input("Выберите пункт: ")
+
+        if choice == "1":
+            word = input("Введите слово: ").lower()
+            definition = input("Введите определение слова: ")
+            dictionary[word] = definition
+            print("Слово добавлено!")
+
+        elif choice == "2":
+            word = input("Введите слово для поиска: ").lower()
+            if word in dictionary:
+                print(f"Определение слова '{word}': {dictionary[word]}")
+            else:
+                print("Это слово не найдено в словаре.")
+
+        elif choice == "3":
+            print("Выход из программы.")
+            break
+        else:
+            print("Неверный ввод. Пожалуйста, попробуйте еще раз.")
+
+if __name__ == "__main__":
+    main()
